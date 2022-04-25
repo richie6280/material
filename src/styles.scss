@@ -1,4 +1,181 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
+// html,
+// body {
+//   height: 100%;
+// }
+// body {
+//   margin: 0;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// @import "~@angular/material/theming";
+// @include mat-core();
+
+// //自定義主題
+// $custom-primary: mat-palette($mat-light-blue, 500);
+// $custom-accent: mat-palette($mat-amber);
+// $custom-warn: mat-palette($mat-grey);
+
+// $custom-theme: mat-dark-theme($custom-primary, $custom-accent, $custom-warn);
+
+// @include angular-material-theme($custom-theme);
+
+// @import "~@angular/material/theming";
+// @import "./theme/_custom-theme-config";
+// @import "./theme/_another-color-config";
+
+// @include mat-core($custom-typography);
+// @include angular-material-theme($custom-app-theme);
+
+// define-palette
+// @use "@angular/material" as mat;
+
+// @include mat.core();
+
+// $my-app-primary: mat.define-palette(mat.$indigo-palette);
+// $my-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// $my-app-warn: mat.define-palette(mat.$red-palette);
+
+// $my-app-theme: mat.define-light-theme(
+//   (
+//     color: (
+//       primary: $my-app-primary,
+//       accent: $my-app-accent,
+//       warn: $my-app-warn,
+//     ),
+//   )
+// );
+
+// // 將主題應用於組件 all-component-colors / all-component-typographies
+// @include mat.all-component-themes($my-app-theme);
+
+// html,
+// body {
+//   height: 100%;
+// }
+// body {
+//   margin: 0;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
+
+// dark mode
+@use "~@angular/material" as mat;
+
+@import "~@angular/material/theming";
+
+@include mat.core();
+
+$angular-primary: mat.define-palette(mat.$teal-palette, 500, 100, 900);
+$angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$angular-warn: mat.define-palette(mat.$red-palette);
+
+$angular-default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($angular-default-theme); // 全部component套用此主題
+
+$angular-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+.darkMode {
+  @include mat.all-component-colors($angular-dark-theme);
+}
+
+// 依class套用
+// @import "~@angular/material/theming";
+// @include mat-core();
+
+$custom-primary: mat-palette($mat-light-blue);
+$custom-accent: mat-palette($mat-green);
+$custom-warn: mat-palette($mat-brown);
+
+$custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
+
+.custom-theme-1 {
+  @include angular-material-theme($custom-theme);
+}
+
+.custom-theme-2 {
+  $custom-primary-2: mat-palette($mat-yellow, 800);
+  $custom-accent-2: mat-palette($mat-deep-orange);
+  $custom-warn-2: mat-palette($mat-pink);
+  $custom-theme-2: mat-dark-theme($custom-primary-2, $custom-accent-2, $custom-warn-2);
+  @include angular-material-theme($custom-theme-2);
+}
+
+// 依class定義不同component的主題
+.my-special-section {
+  $special-primary: mat-palette(mat.$orange-palette);
+  $special-accent: mat-palette(mat.$brown-palette);
+  $special-theme: mat-dark-theme((
+    color: (primary: $special-primary, accent: $special-accent),
+  ));
+ 
+  @include mat.button-color($special-theme);
+}
+
+// 各組件自定義主題
+// $theme-primary: mat-palette($mat-yellow);
+// $theme-accent: mat-palette($mat-green);
+// $theme-warn: mat-palette($mat-red);
+// $theme-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+// @include angular-material-theme($theme-theme);
+
+// @mixin angular-material-theme($theme) {
+//   @include mat-core-theme($theme);
+//   @include mat-autocomplete-theme($theme);
+  // @include mat-button-theme($theme);
+//   @include mat-button-toggle-theme($theme);
+//   @include mat-card-theme($theme);
+//   @include mat-checkbox-theme($theme);
+//   @include mat-chips-theme($theme);
+//   @include mat-datepicker-theme($theme);
+//   @include mat-dialog-theme($theme);
+//   @include mat-grid-list-theme($theme);
+//   @include mat-icon-theme($theme);
+//   @include mat-input-theme($theme);
+//   @include mat-list-theme($theme);
+//   @include mat-menu-theme($theme);
+//   @include mat-progress-bar-theme($theme);
+//   @include mat-progress-spinner-theme($theme);
+//   @include mat-radio-theme($theme);
+//   @include mat-select-theme($theme);
+//   @include mat-sidenav-theme($theme);
+//   @include mat-slide-toggle-theme($theme);
+//   @include mat-slider-theme($theme);
+//   @include mat-tabs-theme($theme);
+//   @include mat-toolbar-theme($theme);
+//   @include mat-tooltip-theme($theme);
+// }
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h2,
+p {
+  padding: 16px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}

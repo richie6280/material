@@ -1,0 +1,16 @@
+// 給特定的元件單獨配置主題顏色
+// @include mat-core-theme($another-color-config); // 元件通用樣式，例如漣漪效果
+// @include mat-button-theme($another-color-config); // 單獨配置按鈕
+// @include mat-checkbox-theme($another-color-config); // 單獨配置 checkbox
+
+// $app-primary: mat-palette($mat-green);
+// $app-accent: mat-palette($mat-pink, A500, A100, A700, A900);
+// $app-warn: mat-palette($mat-orange);
+
+// $another-color-config: mat-light-theme((
+//   color: (
+//     primary: $app-primary,
+//     accent: $app-accent,
+//     warn: $app-warn,  
+//   )
+// ));

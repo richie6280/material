@@ -11,7 +11,17 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
-import {MatCommonModule} from '@angular/material/core';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -27,7 +37,17 @@ import {MatCommonModule} from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    // MatCommonModule
+
+    MatToolbarModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatExpansionModule,
+    FlexLayoutModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,21 @@
+// // 自定義文字排版的 CSS 類 (例如, mat-h1, mat-display-1, mat-typography 等).
+// @include mat-base-typography($another-typography-config);
+
+// // 給 Material 的特定元件自定義文字排版
+// @include mat-checkbox-typography($another-typography-config);
+
+// // 給所有 Material 元件以及 CSS 類自定義文字排版
+// @include angular-material-typography($another-typography-typography);
+
+@mixin example-typography($config-or-theme) {
+    // 和顏色方法類似，引數傳主題物件，或者文字排版配置物件都可以
+    $config: mat-get-typography-config($config-or-theme);
+
+    .example-typography {
+        font: {
+            family: mat-font-family($config, body-1);
+            size: mat-font-size($config, body-1);
+            weight: mat-font-weight($config, body-1);
+        }
+    }
+}
