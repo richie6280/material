@@ -1,19 +1,3 @@
-<!-- <div class="container">
-    <button mat-stroked-button color="primary" (click)="openDialog()">Open dialog</button>
-    
-    <section #section class="custom-theme-1">
-        <div class="example-label">切換自定義主題色</div>
-        <div class="example-button-row">
-            <button mat-raised-button (click)="chenge()">Basic</button>
-            <button mat-raised-button color="primary">Primary</button>
-            <button mat-raised-button color="accent">Accent</button>
-            <button mat-raised-button color="warn">Warn</button>
-            <button mat-raised-button disabled>Disabled</button>
-            <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-    </section>
-</div> -->
-
 <mat-toolbar color="primary">
     Angular Dark Mode
     <div class="flex-stretch"></div>
@@ -83,9 +67,7 @@
             <p>This is the primary content of the panel.</p>
         </mat-expansion-panel>
 
-
         <br><br>
-
 
     </div>
     <div fxFlex="50">
@@ -99,8 +81,6 @@
             <mat-card-content>
                 <p>
                     The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
                 </p>
             </mat-card-content>
             <mat-card-actions>
@@ -109,12 +89,14 @@
             </mat-card-actions>
         </mat-card>
 
+        <br><br>
 
         <div>
             <h1>Dialog</h1>
             <button mat-stroked-button color="primary" (click)="openDialog()">Open dialog</button>
         </div>
 
+        <br><br>
 
         <div #chip class="custom-theme-1">
             <h1>Chip</h1>
@@ -125,8 +107,18 @@
                 <mat-chip color="warn" selected>Warn</mat-chip>
             </mat-chip-list>
         </div>
+
+        <br><br>
+
+        <div class="my-class">
+            <div #elevation class="example-container" [class.mat-elevation-z2]="!isActive"
+                [class.mat-elevation-z8]="isActive">
+                Example
+            </div>
+        </div>
+        <button mat-button (click)="elevationToggle()">Toggle Elevation</button>
+
+
     </div>
-
-
 
 </div>

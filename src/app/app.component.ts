@@ -14,8 +14,11 @@ export class AppComponent implements OnInit {
   buttonToggle: boolean = true;
   chipToggle: boolean = true;
 
+  isActive = false;
+
   @ViewChild('section') section!: ElementRef;
   @ViewChild('chip') chip!: ElementRef;
+  @ViewChild('elevation') elevation!: ElementRef;
 
   toggleControl = new FormControl(false);
   @HostBinding('class') className = '';
@@ -32,15 +35,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // showDialog(): void {
-  //   this.dialog.open(DialogComponent,
-  //     {
-  //       width: '500px'
-  //     });
-  // }
-
   openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent);
+    const dialogRef = this.dialog.open(DialogComponent, { panelClass: 'my-outlined-dialog', width:'300px', height: '100%' });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -62,7 +58,12 @@ export class AppComponent implements OnInit {
     this.chipToggle ? chip.setAttribute('class', 'custom-theme-1') : chip.setAttribute('class', 'custom-theme-2');
   }
 
+  elevationToggle(){
+    this.isActive = !this.isActive;
 
+    const elevation = this.elevation.nativeElement;
+    this.isActive ? elevation.setAttribute('class', 'my-class-with-custom-shadow') : elevation.setAttribute('class', 'my-class-with-default-shadow');
+  }
 
 }
 

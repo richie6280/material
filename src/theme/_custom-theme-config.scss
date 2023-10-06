@@ -1,5 +1,8 @@
-// // 使用系統預定義的顏色變數和 mixin 為自定義主題建立“調色盤”
-// // 所有可用的顏色可以在此檢視: https://material.io/design/color/
+@use "sass:map";
+@use "@angular/material" as mat;
+
+// 使用系統預定義的顏色變數和 mixin 為自定義主題建立“調色盤”
+// 所有可用的顏色可以在此檢視: https://material.io/design/color/
 // $custom-app-primary: mat-palette($mat-indigo);
 
 // // 針對每個調色盤，可選的，可以指定“default”，“lighter”，“darker”，“text”的色調，方便後續取用
@@ -10,21 +13,20 @@
 // $custom-app-warn: mat-palette($mat-orange);
 
 // // 建立明亮風格的主題顏色配置物件
-// $custom-app-theme: mat-light-theme((
-//   color: (
-//     primary: $custom-app-primary,
-//     accent: $custom-app-accent,
-//     warn: $custom-app-warn,  
-//   )
-// ));
-
-
-// @import '~@angular/material/theming';
-
-// // 這裡定義文字排版物件，自定義了字型、headline、body-1.
-// $custom-typography: mat-typography-config(
-//   $font-family: 'monospace',
-//   $headline: mat-typography-level(32px, 48px, 700),
-//   $body-1: mat-typography-level(16px, 24px, 500)
+// $custom-app-theme: mat-light-theme(
+//     (
+//         color: (
+//             primary: $custom-app-primary,
+//             accent: $custom-app-accent,
+//             warn: $custom-app-warn,
+//         ),
+//     )
 // );
+
+@import "~@angular/material/theming";
+
+// 定義文字排版物件
+$custom-typography: mat-typography-config(
+    $font-family: "serif",
+);
 
